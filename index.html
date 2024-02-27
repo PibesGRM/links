@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hub de Enlaces</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    #links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .link {
+      padding: 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .link:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .link i {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Página de Inicio Rápida</h1>
+    <div id="links"></div>
+  </div>
+
+  <script>
+    const links = [
+      { text: 'Sistema de Tickets', url: 'https://ejemplo.com/tickets', icon: '🎫' },
+      { text: 'Documentación Interna', url: 'https://ejemplo.com/documentacion', icon: '📚' },
+      { text: 'Herramientas de Diagnóstico', url: 'https://ejemplo.com/herramientas', icon: '🛠️' },
+      { text: 'Foro de Discusión', url: 'https://ejemplo.com/foro', icon: '💬' },
+      { text: 'Calendario de Mantenimiento', url: 'https://ejemplo.com/calendario', icon: '📅' },
+      { text: 'Base de Conocimientos', url: 'https://ejemplo.com/base-conocimientos', icon: '📖' },
+      { text: 'Generador de Informes', url: 'https://ejemplo.com/informes', icon: '📊' },
+      { text: 'Portal de Usuarios', url: 'https://ejemplo.com/usuarios', icon: '👥' },
+      { text: 'Lista de Verificación', url: 'https://ejemplo.com/verificacion', icon: '✅' },
+      { text: 'Actualizaciones y Anuncios', url: 'https://ejemplo.com/actualizaciones', icon: '📢' }
+    ];
+
+    const linksContainer = document.getElementById('links');
+
+    links.forEach(link => {
+      const linkElement = document.createElement('a');
+      linkElement.href = link.url;
+      linkElement.textContent = link.icon + ' ' + link.text;
+      linkElement.className = 'link';
+      linksContainer.appendChild(linkElement);
+    });
+  </script>
+</body>
+</html>
